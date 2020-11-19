@@ -3,6 +3,27 @@
  <head> 
   <title>Solar System </title> 
   <link rel="stylesheet" href="style.css">
+  <script>alert('Welcome to the Solar System')
+alert('At the right of the screen there are some info buttons')
+alert('Hope you enjoy')
+function onReady(callback) {
+  var intervalId = window.setInterval(function() {
+    if (document.getElementsByTagName('body')[0] !== undefined) {
+      window.clearInterval(intervalId);
+      callback.call(this);
+    }
+  }, 1500);
+}
+
+function setVisible(selector, visible) {
+  document.querySelector(selector).style.display = visible ? 'block' : 'none';
+}
+
+onReady(function() {
+  setVisible('.page', true);
+  setVisible('#loading', false);
+});
+  </script>
  </head> 
  <body> 
   <div id="solarsystem"> 
